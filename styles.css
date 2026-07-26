@@ -1542,14 +1542,31 @@ h1 {
     .mobile-menu > summary {
         display: flex;
         align-items: center;
-        gap: .6rem;
-        padding: .62rem 1rem;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid var(--line);
         border-radius: var(--r-btn);
-        background: var(--primary-color);
-        color: var(--white);
-        font-size: .78rem;
-        font-weight: 700;
+        background: var(--card);
+        color: var(--text-color);
+        font-size: 0;
         cursor: pointer;
+    }
+    .mobile-menu > summary::before {
+        content: "";
+        width: 18px;
+        height: 12px;
+        background:
+            linear-gradient(currentColor, currentColor) 0 0 / 100% 2px no-repeat,
+            linear-gradient(currentColor, currentColor) 0 50% / 100% 2px no-repeat,
+            linear-gradient(currentColor, currentColor) 0 100% / 100% 2px no-repeat;
+    }
+    .mobile-menu > summary span {
+        display: none;
+    }
+    .mobile-menu {
+        border-bottom: 0;
     }
     .mobile-menu-panel {
         position: fixed;
@@ -1765,6 +1782,10 @@ h1 {
     .btn-primary,
     .btn-secondary {
         text-align: center;
+    }
+    .large {
+        padding: .8rem 1.5rem;
+        font-size: .95rem;
     }
 }
 
