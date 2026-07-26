@@ -345,7 +345,7 @@ nav a {
 
 .dropdown-panel a .module-number {
     color: var(--muted-color);
-    font-size: .7rem;
+    font-size: .85rem;
     font-weight: 800;
 }
 
@@ -1058,6 +1058,21 @@ h1 {
     background: linear-gradient(90deg, rgba(145,159,171,.18), rgba(237,234,230,.5));
 }
 
+/* Rupture visuelle entre les axes et la méthode : le monogramme, en
+   filigrane, casse la monotonie des sections texte sans distraire. */
+.brand-break {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 5%;
+}
+
+.brand-break-logo {
+    height: 90px;
+    width: auto;
+    opacity: .55;
+    filter: grayscale(1);
+}
+
 .project-method {
     border-top: 1px solid var(--glass-border);
 }
@@ -1101,135 +1116,63 @@ h1 {
     scroll-margin-top: 80px;
 }
 
-.training-card {
-    display: grid;
-    grid-template-columns: minmax(170px, .35fr) minmax(0, 1.65fr);
-    overflow: hidden;
-    border: 1px solid rgba(145,159,171,.28);
-    border-radius: var(--r-card);
-    background:
-        linear-gradient(135deg, rgba(145,159,171,.14), rgba(237,234,230,.45)),
-        var(--card);
-    box-shadow: 0 28px 70px -45px rgba(145,159,171,.6);
+.modules-group {
+    margin-bottom: 2.5rem;
 }
 
-.training-index {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
-    padding: 2.5rem;
-    border-right: 1px solid var(--glass-border);
-    background: var(--bg-warm);
+.modules-group:last-child {
+    margin-bottom: 0;
 }
 
-.training-index span {
+.modules-group-title {
+    margin-bottom: 1rem;
     color: var(--secondary-color);
     font-size: .72rem;
     font-weight: 800;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
 }
 
-.training-index strong {
-    color: transparent;
-    font-size: clamp(5rem, 10vw, 8rem);
-    font-weight: 800;
-    line-height: 1;
-    -webkit-text-stroke: 1px rgba(57,55,49,.22);
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
 }
 
-.training-content {
-    padding: clamp(2rem, 5vw, 4rem);
-}
-
-.training-meta {
+.module-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: .55rem;
-    margin-bottom: 1.5rem;
-}
-
-.training-meta span {
-    padding: .4rem .7rem;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1.5rem;
     border: 1px solid var(--glass-border);
-    border-radius: var(--r-badge);
+    border-radius: var(--r-card);
+    background: var(--card);
+    text-decoration: none;
+    transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.module-card:hover {
+    border-color: rgba(145,159,171,.45);
+    background: var(--bg-warm);
+    transform: translateY(-2px);
+}
+
+.module-card-number {
     color: var(--muted-color);
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-
-.training-meta span:first-child {
-    border-color: rgba(145,159,171,.4);
-    background: rgba(237,234,230,.75);
-    color: var(--secondary-color);
-}
-
-.training-content h3 {
-    margin-bottom: 1rem;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: -.04em;
-}
-
-.training-content > p {
-    max-width: 750px;
-    color: var(--muted-color);
-    font-size: 1.02rem;
-}
-
-.training-content > p strong {
-    color: var(--text-color);
-}
-
-.training-details {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-    margin: 2.5rem 0;
-    padding: 2rem 0;
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.training-label {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    font-size: .76rem;
+    font-size: .78rem;
     font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
 }
 
-.training-details ul {
-    display: grid;
-    gap: .6rem;
+.module-card-name {
+    color: var(--text-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.module-card-tagline {
     color: var(--muted-color);
     font-size: .87rem;
-    list-style: none;
-}
-
-.training-details li {
-    position: relative;
-    padding-left: 1.2rem;
-}
-
-.training-details li::before {
-    content: "·";
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    line-height: 1;
-}
-
-.training-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
+    line-height: 1.5;
 }
 
 .finality {
@@ -1492,12 +1435,11 @@ h1 {
 }
 
 .footer-col-title {
-    margin-bottom: .3rem;
+    margin-bottom: .5rem;
     color: #fff;
-    font-size: .72rem;
+    font-size: 1.1rem;
     font-weight: 800;
-    letter-spacing: .1em;
-    text-transform: uppercase;
+    letter-spacing: -.01em;
 }
 
 .footer-col a {
@@ -1508,7 +1450,7 @@ h1 {
     transition: color .2s ease;
 }
 
-.footer-col a:hover {
+.site-footer .footer-col a:hover {
     color: #fff;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -1712,28 +1654,8 @@ h1 {
     .project-steps span {
         margin-bottom: 0;
     }
-    .training-card {
+    .modules-grid {
         grid-template-columns: 1fr;
-    }
-    .training-index {
-        align-items: baseline;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: .7rem;
-        min-height: 0;
-        padding: 1.5rem 2rem;
-        border-right: 0;
-        border-bottom: 1px solid var(--glass-border);
-    }
-    .training-index strong {
-        font-size: 2rem;
-    }
-    .training-details {
-        grid-template-columns: 1fr;
-    }
-    .training-button {
-        justify-content: center;
-        width: 100%;
     }
     .document-section {
         align-items: stretch;
