@@ -120,6 +120,15 @@ a {
     padding: 1rem clamp(1rem, 3vw, 3rem);
 }
 
+/* Header transparent uniquement sur la page d'accueil : la bannière du
+   hero sert de fond, le header n'a pas besoin de sa propre plaque. */
+.home-page .glass-header {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+}
+
 .glass-header > nav {
     display: flex;
     justify-content: center;
@@ -992,8 +1001,8 @@ h1 {
 
 .axis-card {
     position: relative;
-    min-height: 310px;
-    padding: 2.25rem;
+    min-height: 220px;
+    padding: 1.5rem;
     overflow: hidden;
     border: 1px solid var(--glass-border);
     border-radius: var(--r-card);
@@ -1011,7 +1020,7 @@ h1 {
 
 .axis-number {
     display: block;
-    margin-bottom: 4.5rem;
+    margin-bottom: 2rem;
     color: rgba(57,55,49,.14);
     font-size: 2rem;
     font-weight: 800;
