@@ -1531,6 +1531,15 @@ h1 {
         grid-template-columns: auto auto;
         justify-content: space-between;
     }
+    .logo-image {
+        height: 74px;
+    }
+    main {
+        padding-top: 106px;
+    }
+    .home-page main {
+        padding-top: 0;
+    }
 
     .glass-header > nav,
     .header-cta {
@@ -1541,6 +1550,8 @@ h1 {
         display: inline-block;
     }
     .mobile-menu > summary {
+        position: relative;
+        z-index: 201;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1569,18 +1580,53 @@ h1 {
     .mobile-menu {
         border-bottom: 0;
     }
+    /* Menu volet plein écran : glisse de droite à gauche au lieu de
+       s'ouvrir en dropdown. display:block reste forcé (au lieu du
+       display:none natif de <details>) pour que la transform anime. */
     .mobile-menu-panel {
+        display: block !important;
         position: fixed;
-        top: 68px;
-        right: 1rem;
-        left: 1rem;
-        max-height: calc(100svh - 84px);
-        padding: 1.25rem;
+        inset: 0 0 0 auto;
+        width: 70%;
+        max-width: 380px;
+        height: 100vh;
+        height: 100svh;
+        margin: 0;
+        padding: 6.5rem 1.5rem 2rem;
         overflow-y: auto;
-        border: 1px solid var(--glass-border);
-        border-radius: var(--r-card);
-        background: rgba(255,255,255,.98);
-        box-shadow: 0 25px 60px rgba(0,0,0,.06);
+        border: 0;
+        border-left: 1px solid var(--glass-border);
+        border-radius: 0;
+        background: rgba(255,255,255,.99);
+        box-shadow: -25px 0 60px rgba(0,0,0,.1);
+        transform: translateX(100%);
+        transition: transform .35s ease;
+        visibility: hidden;
+        z-index: 200;
+    }
+    .mobile-menu[open] .mobile-menu-panel {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    .mobile-menu::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(20,18,16,.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .35s ease;
+        z-index: 199;
+    }
+    .mobile-menu[open]::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .mobile-menu-brand {
+        margin-bottom: 1.5rem;
+    }
+    .mobile-menu-brand .logo-image {
+        height: 44px;
     }
     .mobile-menu-panel nav {
         display: grid;
@@ -1947,24 +1993,13 @@ h1 {
     font-size: 1rem;
 }
 
-.lang-page {
-        padding-top: 4.5rem;
-    }
-
-    .lang-nav {
-        flex-direction: column;
-    }
-
-    .lang-next {
-        text-align: left;
+@media (max-width: 1080px) {
+    .lang-page {
+        padding-top: 106px;
     }
 }
 
 @media (max-width: 720px) {
-    .lang-page {
-        padding-top: 4.5rem;
-    }
-
     .lang-nav {
         flex-direction: column;
     }

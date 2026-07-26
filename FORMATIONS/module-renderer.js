@@ -171,15 +171,34 @@ function headerMarkup() {
             </div>
         </div>
         <details class="mobile-menu"><summary>Technologies <span aria-hidden="true">⌄</span></summary>
-            <div class="mobile-menu-panel"><nav aria-label="Navigation mobile"><a href="../index.html">Accueil</a><a href="../AXES/objectif.html">Les 5 axes</a><a href="../index.html#formation">Le parcours</a></nav>
+            <div class="mobile-menu-panel"><div class="mobile-menu-brand"><img src="../ASSETS/LOGO T.png" alt="Reconversion Pro" class="logo-image"></div><nav aria-label="Navigation mobile"><a href="../index.html">Accueil</a><a href="../AXES/objectif.html">Les 5 axes</a><a href="../index.html#formation">Le parcours</a></nav>
                 <p>Les technologies du parcours</p><ol>${mobileItems}</ol>
             </div>
         </details>
     </header>`;
 }
 
+/* Le volet mobile se referme au clic sur un lien ou en dehors de son
+   panneau (clic sur le fond assombri). */
+function wireMobileMenu() {
+    document.querySelectorAll(".mobile-menu").forEach((menu) => {
+        menu.querySelectorAll(".mobile-menu-panel a").forEach((link) => {
+            link.addEventListener("click", () => { menu.open = false; });
+        });
+    });
+    document.addEventListener("click", (event) => {
+        document.querySelectorAll(".mobile-menu[open]").forEach((menu) => {
+            if (!menu.contains(event.target)) menu.open = false;
+            else if (event.target.closest("summary") === null && event.target.closest(".mobile-menu-panel") === null) {
+                menu.open = false;
+            }
+        });
+    });
+}
+
 async function loadModule() {
     document.body.insertAdjacentHTML("afterbegin", headerMarkup());
+    wireMobileMenu();
     const response = await fetch(sourceFile);
     if (!response.ok) throw new Error("Le contenu du module est indisponible.");
     const markdown = await response.text();

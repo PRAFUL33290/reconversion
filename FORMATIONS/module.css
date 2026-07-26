@@ -1807,6 +1807,7 @@ li code,
 
     .course-shell {
         grid-template-columns: 1fr;
+        padding-top: 106px;
     }
 
     .course-sidebar {
@@ -1822,7 +1823,7 @@ li code,
     }
 
     .course-shell {
-        padding-top: 70px;
+        padding-top: 106px;
     }
 
     .github-link {

@@ -73,3 +73,20 @@ document.querySelectorAll(".progress-track").forEach((track) => {
     const bar = track.querySelector("span");
     if (bar) bar.style.width = "100%";
 });
+
+/* Le volet mobile se referme au clic sur un lien ou en dehors de son
+   panneau (clic sur le fond assombri). */
+document.querySelectorAll(".mobile-menu").forEach((menu) => {
+    menu.querySelectorAll(".mobile-menu-panel a").forEach((link) => {
+        link.addEventListener("click", () => { menu.open = false; });
+    });
+});
+
+document.addEventListener("click", (event) => {
+    document.querySelectorAll(".mobile-menu[open]").forEach((menu) => {
+        if (!menu.contains(event.target)) menu.open = false;
+        else if (event.target.closest("summary") === null && event.target.closest(".mobile-menu-panel") === null) {
+            menu.open = false;
+        }
+    });
+});
