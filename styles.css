@@ -158,9 +158,8 @@ a {
 
 .logo-image {
     display: block;
-    height: 130px;
+    height: 56px;
     width: auto;
-    margin-block: -34px;
 }
 
 /* Six entrées + le bouton « Les technologies » : l'espacement et la taille
@@ -1478,9 +1477,7 @@ h1 {
 }
 
 .footer-logo {
-    height: 90px;
-    margin-top: -22px;
-    margin-bottom: 4px;
+    height: 64px;
     filter: brightness(0) invert(1);
 }
 
