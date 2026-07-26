@@ -1113,7 +1113,21 @@ h1 {
 }
 
 .training-section {
+    position: relative;
     scroll-margin-top: 80px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 5rem 5% clamp(3rem, 8vh, 5rem);
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(249,248,247,.94), rgba(249,248,247,.97)),
+        url("ASSETS/FORMATIONS.png") center / cover no-repeat;
+}
+
+.training-section > * {
+    position: relative;
+    max-width: 1200px;
+    margin-inline: auto;
 }
 
 .modules-group {
