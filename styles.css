@@ -169,9 +169,9 @@ a {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 1.35rem;
+    gap: 1.6rem;
     align-items: center;
-    font-size: .88rem;
+    font-size: 1.05rem;
 }
 
 nav a {
@@ -188,8 +188,8 @@ nav a {
 
 /* Icônes de navigation : SVG au trait, alignées sur la taille du texte. */
 .nav-icon {
-    width: 17px;
-    height: 17px;
+    width: 19px;
+    height: 19px;
     flex: none;
     fill: none;
     stroke: var(--secondary-color);
@@ -289,6 +289,7 @@ nav a {
 }
 
 .formation-menu > .btn-primary {
+    font-size: 1rem;
     white-space: nowrap;
 }
 
@@ -1449,17 +1450,19 @@ h1 {
 }
 
 .site-footer {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     padding: 4.5rem 5% 2rem;
-    border-top: 1px solid var(--glass-border);
-    color: var(--muted-color);
+    background: #211f1c;
+    color: rgba(255,255,255,.62);
 }
 
 .footer-top {
     display: grid;
     grid-template-columns: 1.6fr repeat(3, 1fr);
     gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 3rem;
 }
 
@@ -1478,10 +1481,12 @@ h1 {
     height: 90px;
     margin-top: -22px;
     margin-bottom: 4px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-    font-size: .85rem;
+    color: rgba(255,255,255,.65);
+    font-size: .9rem;
     line-height: 1.6;
 }
 
@@ -1493,7 +1498,7 @@ h1 {
 
 .footer-col-title {
     margin-bottom: .3rem;
-    color: var(--text-color);
+    color: #fff;
     font-size: .72rem;
     font-weight: 800;
     letter-spacing: .1em;
@@ -1501,15 +1506,17 @@ h1 {
 }
 
 .footer-col a {
-    color: var(--muted-color);
-    font-size: .87rem;
-    font-weight: 500;
+    color: rgba(255,255,255,.85);
+    font-size: .95rem;
+    font-weight: 600;
     text-decoration: none;
     transition: color .2s ease;
 }
 
 .footer-col a:hover {
-    color: var(--secondary-color);
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .footer-bottom {
@@ -1517,9 +1524,12 @@ h1 {
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 1.75rem;
-    border-top: 1px solid var(--glass-border);
-    font-size: .78rem;
+    border-top: 1px solid rgba(255,255,255,.14);
+    color: rgba(255,255,255,.65);
+    font-size: .82rem;
 }
 
 @media (max-width: 860px) {

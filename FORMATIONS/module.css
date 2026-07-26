@@ -321,7 +321,7 @@ pre {
     grid-template-columns: 300px minmax(0, 1fr);
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 76px;
+    padding-top: 100px;
 }
 
 .course-sidebar {
