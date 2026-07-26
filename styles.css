@@ -1790,6 +1790,7 @@ h1 {
     .btn-secondary {
         width: 100%;
         max-width: 320px;
+        justify-content: center;
         text-align: center;
     }
     .large {
