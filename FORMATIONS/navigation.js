@@ -34,8 +34,26 @@ function dropdownMarkup(modules) {
         </li>`).join("")}`).join("");
 }
 
+/* Version compacte, en simple liste, pour le nouveau menu déroulant au
+   survol de la page d'accueil (.formation-panel). */
+function formationListMarkup(modules) {
+    return groupedModules(modules).map(({ name, items }) => `
+        <li class="menu-group"><span>${name}</span></li>
+        ${items.map(({ number, name: label, file }) => `
+        <li>
+            <a href="${formationPrefix}${file}"${file === currentFile ? ' aria-current="page"' : ""}>
+                <span class="module-number">${number}</span>
+                ${label}
+            </a>
+        </li>`).join("")}`).join("");
+}
+
 document.querySelectorAll(".learning-dropdown ol").forEach((list) => {
     list.innerHTML = dropdownMarkup(formationModules);
+});
+
+document.querySelectorAll(".formation-panel").forEach((list) => {
+    list.innerHTML = formationListMarkup(formationModules);
 });
 
 document.querySelectorAll(".mobile-menu-panel ol").forEach((list) => {
