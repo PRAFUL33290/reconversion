@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+.generated-course .course-hero {
+    min-height: min(720px, calc(100svh - 76px));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.generated-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem clamp(1.5rem, 5vw, 5rem) 7rem;
+}
+
+.generated-content h2 {
+    margin: 5rem 0 1.2rem;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -.04em;
+}
+
+.generated-content h3 {
+    scroll-margin-top: 100px;
+    margin: 3.5rem 0 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.25;
+}
+
+.generated-content h4 {
+    margin: 2rem 0 .7rem;
+    font-size: 1.05rem;
+}
+
+.generated-content p,
+.generated-content li {
+    color: var(--muted);
+}
+
+.generated-content p {
+    margin: 1rem 0;
+}
+
+.generated-content ul,
+.generated-content ol {
+    display: grid;
+    gap: .65rem;
+    margin: 1rem 0 1.5rem 1.25rem;
+}
+
+.generated-content code {
+    color: var(--text);
+}
+
+.learning-dropdown {
+    max-height: calc(100svh - 92px);
+    overflow-y: auto;
+}
+
+@media (min-width: 769px) {
+    .learning-dropdown ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
