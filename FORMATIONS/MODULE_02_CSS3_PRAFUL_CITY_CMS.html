@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Module 02 du parcours Praful City CMS : créer une interface professionnelle, responsive et maintenable avec CSS3.">
+    <meta name="theme-color" content="#08111f">
+    <title>Module 02 — CSS3 | Reconversion Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="module.css">
+    <script src="module.js" defer></script>
+</head>
+<body data-module="module-02-css3">
+    <a class="skip-link" href="#cours">Aller au cours</a>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+    <header class="course-header">
+        <a class="brand" href="../index.html">Reconversion<span>Pro.</span></a>
+        <div class="header-course">
+            <span>Parcours Praful City CMS</span>
+            <strong>Module 02 · CSS3</strong>
+        </div>
+        <a class="back-link" href="../index.html#formation"><span aria-hidden="true">←</span> Retour au parcours</a>
+    </header>
+
+    <div class="course-shell">
+        <aside class="course-sidebar">
+            <div class="sidebar-intro">
+                <span class="course-chip css-course-chip">Module 02</span>
+                <h2>Créer une interface professionnelle avec CSS3</h2>
+                <div class="sidebar-meta"><span>Débutant</span><span>6–8 heures</span></div>
+            </div>
+
+            <nav class="course-nav" aria-label="Sommaire du module">
+                <p>Dans ce module</p>
+                <ol>
+                    <li><a href="#introduction"><span>01</span>Introduction</a></li>
+                    <li><a href="#bases"><span>02</span>Bases du CSS</a></li>
+                    <li><a href="#box-model"><span>03</span>Box model</a></li>
+                    <li><a href="#design-system"><span>04</span>Typographie &amp; couleurs</a></li>
+                    <li><a href="#flexbox"><span>05</span>Flexbox</a></li>
+                    <li><a href="#grid"><span>06</span>CSS Grid</a></li>
+                    <li><a href="#responsive"><span>07</span>Responsive design</a></li>
+                    <li><a href="#composants"><span>08</span>Composants</a></li>
+                    <li><a href="#architecture"><span>09</span>Architecture CSS</a></li>
+                    <li><a href="#projet"><span>10</span>Projet final</a></li>
+                </ol>
+            </nav>
+
+            <div class="sidebar-progress">
+                <div><span>Progression</span><strong id="completion-label">0 %</strong></div>
+                <div class="completion-track" aria-hidden="true"><span id="completion-bar"></span></div>
+                <small>Coche les étapes terminées.</small>
+            </div>
+        </aside>
+
+        <main id="cours" class="course-main">
+            <section class="course-hero css-course-hero" id="introduction">
+                <div class="hero-topline"><span class="status-dot"></span> Deuxième module du parcours</div>
+                <h1>Donner vie à la <span>Ville de Nova.</span></h1>
+                <p class="hero-lead">
+                    Transforme la structure HTML du module 01 en une interface municipale
+                    moderne, cohérente et adaptée à tous les écrans.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-button" href="#bases">Commencer le cours <span aria-hidden="true">↓</span></a>
+                    <a class="secondary-button" href="MODULE_02_CSS3_PRAFUL_CITY_CMS.md">Voir la version Markdown</a>
+                </div>
+                <dl class="learning-stats">
+                    <div><dt>10</dt><dd>chapitres</dd></div>
+                    <div><dt>6</dt><dd>notions clés</dd></div>
+                    <div><dt>1</dt><dd>interface complète</dd></div>
+                    <div><dt>0</dt><dd>framework</dd></div>
+                </dl>
+            </section>
+
+            <section class="lesson-section overview-section" aria-labelledby="css-objectifs">
+                <div class="lesson-heading">
+                    <p class="eyebrow">Objectifs du module</p>
+                    <h2 id="css-objectifs">Passer d’une structure à une interface</h2>
+                </div>
+                <div class="objective-grid">
+                    <article><span>01</span><p>Comprendre les sélecteurs et la cascade CSS.</p></article>
+                    <article><span>02</span><p>Maîtriser le box model, Flexbox et Grid.</p></article>
+                    <article><span>03</span><p>Créer une charte graphique cohérente.</p></article>
+                    <article><span>04</span><p>Adapter l’interface au mobile et à la tablette.</p></article>
+                    <article><span>05</span><p>Concevoir des composants réutilisables.</p></article>
+                    <article><span>06</span><p>Organiser le CSS pour préparer la suite du projet.</p></article>
+                </div>
+                <label class="completion-check">
+                    <input type="checkbox" data-progress-item>
+                    <span>J’ai pris connaissance des objectifs</span>
+                </label>
+            </section>
+
+            <section class="lesson-section" id="bases">
+                <div class="lesson-heading numbered-heading">
+                    <span>01</span>
+                    <div><p class="eyebrow">Les fondamentaux</p><h2>Comprendre la règle CSS</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Une règle CSS sélectionne un ou plusieurs éléments HTML, puis lui applique
+                    des propriétés visuelles.
+                </p>
+
+                <div class="css-rule-demo">
+                    <div class="rule-code">
+                        <span class="selector">.service-card</span> <span>{</span><br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#ffffff</span>;<br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">1rem</span>;<br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">1.5rem</span>;<br>
+                        <span>}</span>
+                    </div>
+                    <div class="rule-legend">
+                        <p><span class="selector-dot"></span><strong>Sélecteur</strong> L’élément ciblé</p>
+                        <p><span class="property-dot"></span><strong>Propriété</strong> Ce qui est modifié</p>
+                        <p><span class="value-dot"></span><strong>Valeur</strong> Le réglage appliqué</p>
+                    </div>
+                </div>
+
+                <h3 class="subheading">Les sélecteurs essentiels</h3>
+                <div class="selector-grid">
+                    <article><code>p</code><span>Balise</span><p>Tous les paragraphes</p></article>
+                    <article><code>.card</code><span>Classe</span><p>Les éléments de classe card</p></article>
+                    <article><code>#agenda</code><span>Identifiant</span><p>L’élément unique agenda</p></article>
+                    <article><code>nav a</code><span>Descendant</span><p>Les liens dans la navigation</p></article>
+                    <article><code>a:hover</code><span>Pseudo-classe</span><p>Un lien survolé</p></article>
+                    <article><code>*</code><span>Universel</span><p>Tous les éléments</p></article>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Relier le CSS au HTML</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="code-tag">&lt;link</span> <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attr">href</span>=<span class="code-value">"css/style.css"</span><span class="code-tag">&gt;</span></code></pre>
+                </div>
+
+                <article class="exercise-card">
+                    <div class="exercise-head"><span>Exercice 01</span><small>15 minutes</small></div>
+                    <h3>Connecter la feuille de style</h3>
+                    <ol>
+                        <li>Crée le dossier <code>css</code> et le fichier <code>style.css</code>.</li>
+                        <li>Relie-le à la page HTML du module 01.</li>
+                        <li>Change la couleur du fond et celle du titre principal.</li>
+                    </ol>
+                </article>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>Exercice 01 terminé</span></label>
+            </section>
+
+            <section class="lesson-section" id="box-model">
+                <div class="lesson-heading numbered-heading">
+                    <span>02</span>
+                    <div><p class="eyebrow">Dimensionner</p><h2>Maîtriser le box model</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Chaque élément HTML est une boîte composée du contenu, du padding,
+                    de la bordure et de la marge extérieure.
+                </p>
+
+                <div class="box-model-demo">
+                    <span class="box-label margin-label">margin</span>
+                    <div class="box-border">
+                        <span class="box-label border-label">border</span>
+                        <div class="box-padding">
+                            <span class="box-label padding-label">padding</span>
+                            <div class="box-content">contenu<br><small>width × height</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Box model recommandé</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">*</span> {
+    <span class="property">box-sizing</span>: <span class="value">border-box</span>;
+}
+
+<span class="selector">.card</span> {
+    <span class="property">width</span>: <span class="value">100%</span>;
+    <span class="property">padding</span>: <span class="value">1.5rem</span>;
+    <span class="property">border</span>: <span class="value">1px solid #dbe3ec</span>;
+    <span class="property">margin-bottom</span>: <span class="value">1rem</span>;
+}</code></pre>
+                </div>
+
+                <aside class="callout"><span aria-hidden="true">i</span><div><strong>Pourquoi border-box ?</strong><p>La largeur déclarée inclut alors le padding et la bordure. Les dimensions deviennent beaucoup plus prévisibles.</p></div></aside>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>Je comprends les quatre couches du box model</span></label>
+            </section>
+
+            <section class="lesson-section" id="design-system">
+                <div class="lesson-heading numbered-heading">
+                    <span>03</span>
+                    <div><p class="eyebrow">Créer une identité</p><h2>Typographie, couleurs et variables</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Une charte graphique limitée et cohérente facilite la lecture.
+                    Les variables CSS centralisent les décisions visuelles.
+                </p>
+
+                <div class="palette-demo">
+                    <div style="--swatch:#075985"><span>Primaire</span><code>#075985</code></div>
+                    <div style="--swatch:#0284c7"><span>Action</span><code>#0284c7</code></div>
+                    <div style="--swatch:#f1f5f9"><span>Fond</span><code>#f1f5f9</code></div>
+                    <div style="--swatch:#0f172a"><span>Texte</span><code>#0f172a</code></div>
+                    <div style="--swatch:#f59e0b"><span>Accent</span><code>#f59e0b</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>variables.css</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">:root</span> {
+    <span class="property">--color-primary</span>: <span class="value">#075985</span>;
+    <span class="property">--color-action</span>: <span class="value">#0284c7</span>;
+    <span class="property">--color-background</span>: <span class="value">#f1f5f9</span>;
+    <span class="property">--color-text</span>: <span class="value">#0f172a</span>;
+    <span class="property">--radius</span>: <span class="value">12px</span>;
+    <span class="property">--space</span>: <span class="value">1rem</span>;
+}
+
+<span class="selector">body</span> {
+    <span class="property">color</span>: <span class="value">var(--color-text)</span>;
+    <span class="property">background</span>: <span class="value">var(--color-background)</span>;
+}</code></pre>
+                </div>
+
+                <div class="unit-table">
+                    <div><code>px</code><p>Dimensions précises : bordures, petites icônes.</p></div>
+                    <div><code>rem</code><p>Tailles accessibles liées à la taille racine.</p></div>
+                    <div><code>%</code><p>Dimensions relatives au conteneur parent.</p></div>
+                    <div><code>vw / vh</code><p>Dimensions relatives à la fenêtre.</p></div>
+                    <div><code>clamp()</code><p>Valeur fluide encadrée par un minimum et un maximum.</p></div>
+                </div>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>J’ai défini la palette et les variables de Nova</span></label>
+            </section>
+
+            <section class="lesson-section" id="flexbox">
+                <div class="lesson-heading numbered-heading">
+                    <span>04</span>
+                    <div><p class="eyebrow">Aligner</p><h2>Construire avec Flexbox</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Flexbox organise des éléments sur un axe principal. Il est idéal pour
+                    une navigation, une rangée de boutons ou l’alignement interne d’une carte.
+                </p>
+
+                <div class="flex-demo">
+                    <div><span>Logo Nova</span><span>Actualités</span><span>Agenda</span><span>Services</span></div>
+                    <p><code>display: flex</code> · <code>align-items: center</code> · <code>gap: 1rem</code></p>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Navigation avec Flexbox</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">.main-navigation</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">space-between</span>;
+    <span class="property">align-items</span>: <span class="value">center</span>;
+    <span class="property">gap</span>: <span class="value">1rem</span>;
+}</code></pre>
+                </div>
+
+                <div class="property-map">
+                    <article><code>flex-direction</code><p>Choisit l’axe : ligne ou colonne.</p></article>
+                    <article><code>justify-content</code><p>Aligne sur l’axe principal.</p></article>
+                    <article><code>align-items</code><p>Aligne sur l’axe secondaire.</p></article>
+                    <article><code>gap</code><p>Définit un espace régulier entre les éléments.</p></article>
+                    <article><code>flex-wrap</code><p>Autorise le passage sur plusieurs lignes.</p></article>
+                    <article><code>flex</code><p>Contrôle l’espace occupé par un enfant.</p></article>
+                </div>
+
+                <article class="exercise-card">
+                    <div class="exercise-head"><span>Exercice 02</span><small>25 minutes</small></div>
+                    <h3>Aligner le header</h3>
+                    <p>Place le logo à gauche, la navigation à droite et assure un espacement régulier entre les liens.</p>
+                </article>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>Exercice Flexbox terminé</span></label>
+            </section>
+
+            <section class="lesson-section" id="grid">
+                <div class="lesson-heading numbered-heading">
+                    <span>05</span>
+                    <div><p class="eyebrow">Composer</p><h2>Créer des grilles responsives</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    CSS Grid contrôle simultanément les lignes et les colonnes.
+                    Il convient parfaitement aux actualités et aux services municipaux.
+                </p>
+
+                <div class="grid-visual">
+                    <article><span>Actualité</span><strong>Culture</strong></article>
+                    <article><span>Actualité</span><strong>Travaux</strong></article>
+                    <article><span>Actualité</span><strong>Environnement</strong></article>
+                    <article><span>Actualité</span><strong>Jeunesse</strong></article>
+                    <article><span>Actualité</span><strong>Sport</strong></article>
+                    <article><span>Actualité</span><strong>Citoyenneté</strong></article>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Grille automatique</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">.news-grid</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>:
+        <span class="value">repeat(auto-fit, minmax(240px, 1fr))</span>;
+    <span class="property">gap</span>: <span class="value">1.5rem</span>;
+}</code></pre>
+                </div>
+
+                <aside class="callout"><span aria-hidden="true">i</span><div><strong>Une grille déjà flexible</strong><p><code>auto-fit</code> et <code>minmax()</code> permettent aux cartes de se réorganiser selon la place disponible.</p></div></aside>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>J’ai créé la grille des actualités</span></label>
+            </section>
+
+            <section class="lesson-section" id="responsive">
+                <div class="lesson-heading numbered-heading">
+                    <span>06</span>
+                    <div><p class="eyebrow">Tous les écrans</p><h2>Concevoir en responsive</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Commence par une mise en page simple pour le mobile, puis enrichis-la
+                    quand l’espace disponible augmente : c’est l’approche mobile first.
+                </p>
+
+                <div class="device-demo">
+                    <div class="phone-device"><span></span><div class="device-cards"><i></i><i></i><i></i></div><small>Mobile</small></div>
+                    <div class="tablet-device"><span></span><div class="device-cards"><i></i><i></i><i></i><i></i></div><small>Tablette</small></div>
+                    <div class="desktop-device"><span></span><div class="device-cards"><i></i><i></i><i></i></div><small>Ordinateur</small></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Media query</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">.service-grid</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">1fr</span>;
+}
+
+<span class="selector">@media (min-width: 768px)</span> {
+    <span class="selector">.service-grid</span> {
+        <span class="property">grid-template-columns</span>: <span class="value">repeat(3, 1fr)</span>;
+    }
+}</code></pre>
+                </div>
+
+                <h3 class="subheading">Points à vérifier</h3>
+                <div class="responsive-checks">
+                    <span>Texte lisible sans zoom</span><span>Navigation utilisable</span>
+                    <span>Boutons faciles à toucher</span><span>Aucun défilement horizontal</span>
+                    <span>Images flexibles</span><span>Ordre du contenu logique</span>
+                </div>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>J’ai testé la page sur mobile et tablette</span></label>
+            </section>
+
+            <section class="lesson-section" id="composants">
+                <div class="lesson-heading numbered-heading">
+                    <span>07</span>
+                    <div><p class="eyebrow">Réutiliser</p><h2>Créer des composants cohérents</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Un composant rassemble des styles réutilisables. Une classe de base
+                    peut être complétée par une variante.
+                </p>
+
+                <div class="component-showcase">
+                    <article class="demo-card">
+                        <span>Vie municipale</span><h3>Conseil municipal</h3>
+                        <p>Retrouvez l’ordre du jour de la prochaine séance.</p>
+                        <a href="#">En savoir plus</a>
+                    </article>
+                    <div class="button-showcase">
+                        <button type="button" class="demo-primary">Action principale</button>
+                        <button type="button" class="demo-secondary">Action secondaire</button>
+                        <button type="button" class="demo-link">Lien simple →</button>
+                    </div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>Composant bouton</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">.button</span> {
+    <span class="property">display</span>: <span class="value">inline-flex</span>;
+    <span class="property">padding</span>: <span class="value">.75rem 1.25rem</span>;
+    <span class="property">border-radius</span>: <span class="value">var(--radius)</span>;
+    <span class="property">transition</span>: <span class="value">transform .2s ease</span>;
+}
+
+<span class="selector">.button--primary</span> {
+    <span class="property">background</span>: <span class="value">var(--color-action)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+}
+
+<span class="selector">.button:hover</span> {
+    <span class="property">transform</span>: <span class="value">translateY(-2px)</span>;
+}
+
+<span class="selector">.button:focus-visible</span> {
+    <span class="property">outline</span>: <span class="value">3px solid #f59e0b</span>;
+}</code></pre>
+                </div>
+
+                <aside class="callout warning"><span aria-hidden="true">!</span><div><strong>Le focus est indispensable</strong><p>Un effet de survol ne suffit pas. Les utilisateurs au clavier doivent toujours voir où ils se trouvent.</p></div></aside>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>J’ai créé les boutons et cartes réutilisables</span></label>
+            </section>
+
+            <section class="lesson-section" id="architecture">
+                <div class="lesson-heading numbered-heading">
+                    <span>08</span>
+                    <div><p class="eyebrow">Maintenir le projet</p><h2>Organiser les fichiers CSS</h2></div>
+                </div>
+                <p class="lesson-lead">
+                    Séparer les responsabilités rend le code plus facile à retrouver,
+                    corriger et intégrer plus tard dans Symfony.
+                </p>
+
+                <div class="architecture-tree">
+                    <p><span>▾</span> assets/</p>
+                    <p class="level-1"><span>▾</span> css/</p>
+                    <p class="level-2"><i>01</i> reset.css <small>Normalisation</small></p>
+                    <p class="level-2"><i>02</i> variables.css <small>Design tokens</small></p>
+                    <p class="level-2"><i>03</i> typography.css <small>Textes et titres</small></p>
+                    <p class="level-2"><i>04</i> layout.css <small>Grilles et structure</small></p>
+                    <p class="level-2"><i>05</i> components.css <small>Boutons et cartes</small></p>
+                    <p class="level-2"><i>06</i> utilities.css <small>Classes utilitaires</small></p>
+                    <p class="level-2 tree-main"><i>07</i> style.css <small>Point d’entrée</small></p>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-toolbar"><span>style.css</span><button type="button" class="copy-button" data-copy-code>Copier</button></div>
+                    <pre><code><span class="selector">@import</span> <span class="value">url("reset.css")</span>;
+<span class="selector">@import</span> <span class="value">url("variables.css")</span>;
+<span class="selector">@import</span> <span class="value">url("typography.css")</span>;
+<span class="selector">@import</span> <span class="value">url("layout.css")</span>;
+<span class="selector">@import</span> <span class="value">url("components.css")</span>;
+<span class="selector">@import</span> <span class="value">url("utilities.css")</span>;</code></pre>
+                </div>
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>Mon CSS est organisé en fichiers logiques</span></label>
+            </section>
+
+            <section class="lesson-section project-section css-final-project" id="projet">
+                <div class="project-badge">Projet de validation</div>
+                <div class="lesson-heading">
+                    <p class="eyebrow">Mission finale</p>
+                    <h2>Designer l’accueil de la Ville de Nova</h2>
+                </div>
+                <p class="lesson-lead">
+                    Mets en forme le HTML du module 01 sans Bootstrap ni Tailwind.
+                    L’interface finale doit être cohérente, responsive et accessible.
+                </p>
+
+                <div class="project-requirements">
+                    <article><span>01</span><div><h3>Header</h3><p>Logo, navigation Flexbox et état de focus visible.</p></div></article>
+                    <article><span>02</span><div><h3>Hero banner</h3><p>Titre fort, texte lisible et bouton principal.</p></div></article>
+                    <article><span>03</span><div><h3>Actualités</h3><p>Trois cartes organisées avec CSS Grid.</p></div></article>
+                    <article><span>04</span><div><h3>Agenda</h3><p>Dates mises en valeur et contenu hiérarchisé.</p></div></article>
+                    <article><span>05</span><div><h3>Services</h3><p>Composants cohérents et réutilisables.</p></div></article>
+                    <article><span>06</span><div><h3>Footer</h3><p>Mise en page adaptée au mobile.</p></div></article>
+                </div>
+
+                <aside class="project-constraints">
+                    <h3>Critères de validation</h3>
+                    <ul>
+                        <li>Variables CSS utilisées</li>
+                        <li>Flexbox maîtrisé</li>
+                        <li>Grid maîtrisé</li>
+                        <li>Responsive fonctionnel</li>
+                        <li>Focus clavier visible</li>
+                        <li>Fichiers bien organisés</li>
+                    </ul>
+                </aside>
+
+                <label class="completion-check"><input type="checkbox" data-progress-item><span>Mon interface Ville de Nova est terminée</span></label>
+            </section>
+
+            <section class="module-complete">
+                <span class="complete-icon" aria-hidden="true">✓</span>
+                <p class="eyebrow">Fin du module 02</p>
+                <h2>Ton interface est prête.</h2>
+                <p>
+                    Vérifie le rendu sur plusieurs tailles d’écran, puis compare ton travail
+                    avec les critères de validation avant de poursuivre.
+                </p>
+                <div>
+                    <a class="primary-button" href="MODULE_02_CSS3_PRAFUL_CITY_CMS.md#-validation">Ouvrir la validation</a>
+                    <a class="secondary-button disabled-button" href="#" aria-disabled="true">Module 03 · Bientôt disponible</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="course-footer">
+        <a class="brand" href="../index.html">Reconversion<span>Pro.</span></a>
+        <p>Parcours Praful City CMS · Julien Guerrier</p>
+        <a href="#cours">Retour en haut ↑</a>
+    </footer>
+</body>
+</html>
