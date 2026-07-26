@@ -1451,7 +1451,7 @@ h1 {
 .site-footer {
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    padding: 4.5rem 5% 2rem;
+    padding: 4.5rem clamp(1rem, 3vw, 3rem) 2rem;
     background: #211f1c;
     color: rgba(255,255,255,.62);
 }
@@ -1460,8 +1460,6 @@ h1 {
     display: grid;
     grid-template-columns: 1.6fr repeat(3, 1fr);
     gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding-bottom: 3rem;
 }
 
@@ -1521,8 +1519,6 @@ h1 {
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding-top: 1.75rem;
     border-top: 1px solid rgba(255,255,255,.14);
     color: rgba(255,255,255,.65);
