@@ -114,12 +114,11 @@ function groupedCatalog() {
 function headerMarkup() {
     const items = groupedCatalog().map(({ name, items: modules }) => `
         <li class="menu-group"><span>${name}</span></li>
-        ${modules.map(({ number, name: label, file, tagline }) => `
-        <li class="module-current">
+        ${modules.map(({ number, name: label, file }) => `
+        <li>
             <a href="${file}"${number === currentModule ? ' aria-current="page"' : ""}>
                 <span class="module-number">${number}</span>
-                <span><strong>${label}</strong><small>${tagline}</small></span>
-                <span class="module-status">${number === currentModule ? "Module actuel" : "Ouvrir"}</span>
+                ${label}
             </a>
         </li>`).join("")}`).join("");
 
@@ -130,23 +129,49 @@ function headerMarkup() {
         </a></li>`).join("");
 
     return `<header class="glass-header">
-        <a class="logo project-logo" href="../index.html" aria-label="Retour à l’accueil">Reconversion<span>Pro.</span></a>
+        <a class="logo project-logo" href="../index.html" aria-label="Retour à l’accueil">
+            <img src="../ASSETS/LOGO T.png" alt="Reconversion Pro" class="logo-image">
+        </a>
         <nav aria-label="Navigation principale">
             <ul class="nav-list">
-                <li><a href="../index.html#projet">Le projet</a></li>
-                <li><a href="../index.html#axes">Les 5 axes</a></li>
-                <li><a href="../index.html#document">La synthèse</a></li>
-                <li class="learning-menu"><details><summary class="btn-primary">Les technologies <span class="menu-chevron" aria-hidden="true">⌄</span></summary>
-                    <div class="learning-dropdown">
-                        <div class="learning-dropdown-head"><div><span class="learning-overline">Parcours d’apprentissage</span><p>Chaque technologie, expliquée simplement</p></div><span class="progress-count">${moduleCatalog.length} modules</span></div>
-                        <ol>${items}</ol>
-                        <a class="learning-overview" href="../index.html#formation">Voir le parcours complet <span aria-hidden="true">→</span></a>
-                    </div>
-                </details></li>
+                <li>
+                    <a href="../index.html" title="Accueil — tableau de bord du projet">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.5 20.5v-6h5v6"/></svg>
+                        Accueil
+                    </a>
+                </li>
+                <li class="nav-dropdown axes-menu">
+                    <span class="nav-link-summary" tabindex="0">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/></svg>
+                        Les 5 axes
+                        <svg class="menu-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5 12 15l7-6.5"/></svg>
+                    </span>
+                    <ul class="dropdown-panel">
+                        <li><a href="../AXES/objectif.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>Objectif</a></li>
+                        <li><a href="../AXES/competences-actuelles.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h9"/><path d="M4 12h13"/><path d="M4 16.5h7"/><path d="M17.5 16.5l2 2 3-3.5"/></svg>Compétences</a></li>
+                        <li><a href="../AXES/besoins-marches.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg>Marché</a></li>
+                        <li><a href="../AXES/competences-a-renforcer.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v12"/><path d="M8 7.5 12 3.5l4 4"/><path d="M5 20.5h14"/><path d="M5 20.5v-3"/><path d="M19 20.5v-6"/></svg>Renforcer</a></li>
+                        <li><a href="../AXES/atomisation.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/></svg>Atomisation</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
+        <div class="header-cta nav-dropdown formation-menu">
+            <span class="btn-primary btn-icon" tabindex="0">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4.2V15h2V8Z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>
+                FORMATION
+                <svg class="menu-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5 12 15l7-6.5"/></svg>
+            </span>
+            <div class="dropdown-panel formation-dropdown">
+                <ul class="formation-panel">${items}</ul>
+                <div class="dropdown-footer">
+                    <a href="../LANGAGES/index.html">Les langages expliqués simplement <span aria-hidden="true">→</span></a>
+                    <a href="../index.html#formation">Voir le parcours de formation <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
         <details class="mobile-menu"><summary>Technologies <span aria-hidden="true">⌄</span></summary>
-            <div class="mobile-menu-panel"><nav aria-label="Navigation mobile"><a href="../index.html#projet">Le projet</a><a href="../index.html#axes">Les 5 axes</a><a href="../index.html#formation">Le parcours</a></nav>
+            <div class="mobile-menu-panel"><nav aria-label="Navigation mobile"><a href="../index.html">Accueil</a><a href="../AXES/objectif.html">Les 5 axes</a><a href="../index.html#formation">Le parcours</a></nav>
                 <p>Les technologies du parcours</p><ol>${mobileItems}</ol>
             </div>
         </details>
