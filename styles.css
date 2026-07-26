@@ -1656,6 +1656,16 @@ h1 {
     .project-hero {
         padding-inline: 1.75rem;
     }
+    .project-hero::before {
+        background-position: 78% 15%;
+    }
+    .project-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(249,248,247,.55) 0%, rgba(249,248,247,.88) 45%, rgba(249,248,247,.97) 70%);
+        pointer-events: none;
+    }
     .project-hero > .hero-content {
         text-align: center;
     }
