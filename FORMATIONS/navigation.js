@@ -1,7 +1,11 @@
 const formationModules = window.FORMATION_MODULES || [];
 
-const insideFormations = window.location.pathname.includes("/FORMATIONS/");
-const formationPrefix = insideFormations ? "" : "FORMATIONS/";
+/* Le menu est partagé par trois emplacements : la racine, /FORMATIONS/ et
+   /LANGAGES/. Le préfixe des liens s'adapte au dossier courant. */
+const path = window.location.pathname;
+const formationPrefix = path.includes("/FORMATIONS/") ? ""
+    : path.includes("/LANGAGES/") ? "../FORMATIONS/"
+    : "FORMATIONS/";
 const currentFile = window.location.pathname.split("/").pop();
 
 /* Les modules sont affichés par famille (« Le site visible », « Les coulisses »,

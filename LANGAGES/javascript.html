@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JavaScript : Les interactions dans le navigateur. Explication simple et repères historiques, dans le cadre du projet de reconversion.">
+    <meta name="theme-color" content="#f9f8f7">
+    <title>JavaScript — Reconversion Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="langages.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <div class="background-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <header class="glass-header">
+        <a class="logo project-logo" href="../index.html" aria-label="Retour à l’accueil">
+            Reconversion<span>Pro.</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li>
+                    <a href="../index.html" title="Accueil — tableau de bord du projet">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.5 20.5v-6h5v6"/></svg>
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/objectif.html" title="Objectif professionnel">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>
+                        Objectif
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/competences-actuelles.html" title="Compétences actuelles">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h9"/><path d="M4 12h13"/><path d="M4 16.5h7"/><path d="M17.5 16.5l2 2 3-3.5"/></svg>
+                        Compétences
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/besoins-marches.html" title="Besoins du marché">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg>
+                        Marché
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/competences-a-renforcer.html" title="Compétences à renforcer">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v12"/><path d="M8 7.5 12 3.5l4 4"/><path d="M5 20.5h14"/><path d="M5 20.5v-3"/><path d="M19 20.5v-6"/></svg>
+                        Renforcer
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/atomisation.html" title="Atomisation — le positionnement unique">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/></svg>
+                        Atomisation
+                    </a>
+                </li>
+                <li class="learning-menu">
+                    <details>
+                        <summary class="btn-primary">Les technologies</summary>
+                        <div class="learning-dropdown">
+                            <div class="learning-dropdown-head">
+                                <div>
+                                    <span class="learning-overline">Parcours d’apprentissage</span>
+                                    <p>Chaque technologie, expliquée simplement</p>
+                                </div>
+                                <span class="progress-count">10 modules</span>
+                            </div>
+                            <div class="progress-track" aria-label="10 modules disponibles"><span></span></div>
+                            <ol></ol>
+                            <div class="learning-links">
+                                <a class="learning-overview" href="../LANGAGES/index.html">
+                                    Les langages expliqués simplement <span aria-hidden="true">→</span>
+                                </a>
+                                <a class="learning-overview" href="../index.html#formation">
+                                    Voir le parcours de formation <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+        <details class="mobile-menu">
+            <summary>Menu <span aria-hidden="true">⌄</span></summary>
+            <div class="mobile-menu-panel">
+                <nav aria-label="Navigation mobile">
+                    <a href="../index.html">Accueil — tableau de bord du projet</a>
+                    <a href="../AXES/objectif.html">Objectif professionnel</a>
+                    <a href="../AXES/competences-actuelles.html">Compétences actuelles</a>
+                    <a href="../AXES/besoins-marches.html">Besoins du marché</a>
+                    <a href="../AXES/competences-a-renforcer.html">Compétences à renforcer</a>
+                    <a href="../AXES/atomisation.html">Atomisation — le positionnement unique</a>
+                    <a href="../LANGAGES/index.html">Les langages</a>
+                </nav>
+                <p>Les technologies du parcours</p>
+                <ol></ol>
+            </div>
+        </details>
+    </header>
+
+    <main id="contenu" class="lang-page">
+        <nav class="breadcrumb" aria-label="Fil d’ariane">
+            <a href="../index.html">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html">Les langages</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">JavaScript</span>
+        </nav>
+
+        <section class="section lang-hero">
+            <p class="section-kicker">Le site visible</p>
+            <div class="lang-hero-title">
+                <svg class="lang-icon lang-icon-large" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M10 10v4.5a1.6 1.6 0 0 1-3 .4"/><path d="M17 10.6a1.9 1.9 0 0 0-2.8.5c-.4 1 .4 1.6 1.4 1.9s1.7 1 1.3 2a2 2 0 0 1-2.9.4"/></svg>
+                <h1>JavaScript</h1>
+            </div>
+            <p class="lang-tagline">Les interactions dans le navigateur</p>
+            <p class="lang-summary">JavaScript rend la page vivante : un menu qui s’ouvre, un filtre d’actualités, une carte interactive, un formulaire qui vérifie ce qu’on saisit avant l’envoi. C’est le premier véritable langage de programmation du trio du web.</p>
+        </section>
+
+        <section class="section lang-block">
+            <h2>D’où ça vient</h2>
+            <ol class="lang-history">
+                    <li><p>1995 : Brendan Eich écrit le langage en dix jours pour Netscape. Il devait s’appeler LiveScript ; le nom JavaScript est un coup de marketing, sans aucun lien de parenté avec Java.</p></li>
+                    <li><p>Les années 2000 sont celles de la guerre des navigateurs, où le même script se comporte différemment partout. L’arrivée d’AJAX puis de bibliothèques comme jQuery permet enfin d’écrire du code portable.</p></li>
+                    <li><p>Depuis ES6 (2015), le langage se modernise chaque année. Avec Node.js, il sort aussi du navigateur et s’exécute côté serveur — ce qui en fait aujourd’hui l’un des langages les plus utilisés au monde.</p></li>
+            </ol>
+        </section>
+
+        <section class="section lang-block">
+            <h2>Ce qu’il faut retenir</h2>
+            <div class="lang-keys">
+                <article class="lang-key">
+                    <h3>Il s’exécute chez le visiteur</h3>
+                    <p>Le code part avec la page et tourne dans le navigateur, sans aller-retour vers le serveur.</p>
+                </article>
+                <article class="lang-key">
+                    <h3>Événementiel</h3>
+                    <p>On réagit à des actions : un clic, une saisie, un défilement, le chargement de la page.</p>
+                </article>
+                <article class="lang-key">
+                    <h3>Un usage mesuré vaut mieux</h3>
+                    <p>Un site doit rester utilisable même quand un script échoue : c’est une question d’accessibilité.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section lang-block">
+            <h2>Dans ce projet</h2>
+            <div class="lang-role glass-panel">
+                <p>Troisième module du parcours. L’objectif n’est pas la performance technique, mais l’autonomie : savoir ajouter une interaction utile sans casser la page.</p>
+                <a class="btn-primary large" href="../FORMATIONS/MODULE_03_JAVASCRIPT.html">Ouvrir le module JavaScript</a>
+            </div>
+        </section>
+
+        <nav class="lang-nav" aria-label="Autres langages">
+            <a class="lang-prev" href="css.html"><span>Précédent</span><strong>CSS</strong></a>
+            <a class="lang-next" href="mysql.html"><span>Suivant</span><strong>MySQL</strong></a>
+        </nav>
+    </main>
+
+    <footer>
+        <a class="logo project-logo" href="../index.html">Reconversion<span>Pro.</span></a>
+        <p>Projet de transition professionnelle — Julien Guerrier</p>
+        <p>2026</p>
+    </footer>
+    <script src="../FORMATIONS/modules-catalog.js"></script>
+    <script src="../FORMATIONS/navigation.js"></script>
+
+</body>
+</html>

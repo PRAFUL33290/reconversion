@@ -1,0 +1,141 @@
+/* Styles propres aux pages « Les langages ».
+   Complète styles.css (variables, header, boutons) sans le dupliquer. */
+
+.lang-hero {
+    padding-bottom: 1rem;
+}
+
+.lang-hero-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.lang-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    letter-spacing: -.03em;
+}
+
+.lang-icon {
+    width: 26px;
+    height: 26px;
+    flex: none;
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.lang-icon-large {
+    width: clamp(38px, 6vw, 54px);
+    height: clamp(38px, 6vw, 54px);
+    stroke-width: 1.2;
+}
+
+.lang-tagline {
+    margin-bottom: 1.25rem;
+    color: var(--secondary-color);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Histoire : trois temps numérotés, lus comme une frise verticale. */
+
+.lang-keys {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.lang-key {
+    padding: 1.6rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+}
+
+.lang-key h3 {
+    margin-bottom: .6rem;
+    font-size: 1.02rem;
+}
+
+.lang-key p {
+    color: var(--muted-color);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+.lang-role {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: start;
+    padding: 2.25rem;
+}
+
+.lang-role p {
+    max-width: 70ch;
+    color: var(--muted-color);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Index : les langages regroupés par famille. */
+.lang-block h2.lang-family {
+    margin: 2.5rem 0 1rem;
+    color: var(--secondary-color);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.lang-block h2.lang-family:first-child {
+    margin-top: 0;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1rem;
+}
+
+.lang-card {
+    display: grid;
+    gap: .35rem;
+    padding: 1.75rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+    text-decoration: none;
+    transition: border-color .2s ease, transform .2s ease, background .2s ease;
+}
+
+.lang-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(145,159,171,.45);
+    background: var(--bg-warm);
+}
+
+.lang-card .lang-icon {
+    margin-bottom: .75rem;
+}
+
+.lang-card strong {
+    color: var(--text-color);
+    font-size: 1.15rem;
+}
+
+.lang-card > span {
+    color: var(--secondary-color);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.lang-card p {
+    margin-top: .5rem;
+    color: var(--muted-color);
+    font-size: .88rem;
+    line-height: 1.6;
+}

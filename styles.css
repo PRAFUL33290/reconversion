@@ -150,17 +150,45 @@ a {
     margin-left: .12rem;
 }
 
+/* Six entrées + le bouton « Les technologies » : l'espacement et la taille
+   sont resserrés pour que la barre tienne sur une ligne jusqu'à 1080px, seuil
+   à partir duquel le menu mobile prend le relais. */
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.35rem;
     align-items: center;
+    font-size: .88rem;
 }
 
 nav a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
+}
+
+.nav-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Icônes de navigation : SVG au trait, alignées sur la taille du texte. */
+.nav-icon {
+    width: 17px;
+    height: 17px;
+    flex: none;
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .2s ease, transform .2s ease;
+}
+
+.nav-list a:hover .nav-icon {
+    stroke: var(--text-color);
+    transform: translateY(-1px);
 }
 
 .mobile-contact,
@@ -446,13 +474,41 @@ main {
 }
 
 .project-hero {
+    position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding-inline: clamp(1.25rem, 4vw, 5rem);
+    overflow: hidden;
     border-bottom: 1px solid var(--glass-border);
     background:
         radial-gradient(circle at 50% 42%, rgba(145,159,171,.13), transparent 42%),
         linear-gradient(180deg, rgba(237,234,230,.35), rgba(237,234,230,.8));
+}
+
+/* La même image sert de toile de fond, très atténuée : elle donne de la
+   matière au hero sans concurrencer le titre. */
+.project-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("ASSETS/HERO.png") center / 120% no-repeat;
+    opacity: .07;
+    filter: saturate(.3) blur(4px);
+    transform: scale(1.06);
+    pointer-events: none;
+}
+
+.project-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(249,248,247,.55), rgba(237,234,230,.75));
+    pointer-events: none;
+}
+
+.project-hero > .hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .project-hero .hero-content {
@@ -462,6 +518,67 @@ main {
 .project-hero h1 {
     max-width: 1500px;
     margin-inline: auto;
+}
+
+/* Hero en deux colonnes : le discours à gauche, la mise en situation à droite.
+   Repasse sur une colonne centrée sous 940px. */
+.hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+    max-width: 1400px !important;
+    text-align: left;
+}
+
+.hero-split h1 {
+    margin-inline: 0;
+    font-size: clamp(2.4rem, 4.2vw, 4.2rem);
+}
+
+.hero-split .hero-lead {
+    margin-inline: 0;
+    max-width: 46ch;
+}
+
+.hero-split .cta-group {
+    justify-content: flex-start;
+}
+
+.hero-visual {
+    position: relative;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: var(--card);
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,.12);
+}
+
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 940px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-split .hero-lead {
+        margin-inline: auto;
+    }
+
+    .hero-split .cta-group {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+        max-width: 560px;
+        margin-inline: auto;
+    }
 }
 
 h1 {
@@ -844,6 +961,12 @@ h1 {
 .axis-card-wide .axis-number {
     margin-bottom: 0;
     font-size: clamp(3rem, 7vw, 6rem);
+}
+
+/* Carte 01 : pleine largeur, en tête de grille, avant les cartes 02 à 04
+   réparties sur deux colonnes. */
+.axis-card-wide.axis-card-featured {
+    background: linear-gradient(90deg, rgba(145,159,171,.18), rgba(237,234,230,.5));
 }
 
 .project-method {
@@ -1253,7 +1376,7 @@ footer .logo {
     color: var(--ink);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .glass-header > nav {
         display: none;
     }
@@ -1522,4 +1645,179 @@ footer .logo {
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }
+}
+
+/* ------------------------------------------------------------------
+   Pages internes (LANGAGES/ et AXES/) : mise en page commune —
+   fil d'ariane, chapeau, frise « d'où ça vient », navigation de bas
+   de page. Les styles spécifiques restent dans langages.css / axes.css.
+   ------------------------------------------------------------------ */
+
+.lang-page {
+    padding-top: 6rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem clamp(1rem, 4vw, 3rem) 0;
+    color: var(--muted-color);
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--text-color);
+}
+
+.lang-summary {
+    max-width: 62ch;
+    color: var(--muted-color);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.lang-block h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.lang-history {
+    display: grid;
+    gap: 1rem;
+    max-width: 78ch;
+    list-style: none;
+    counter-reset: histoire;
+}
+
+.lang-history li {
+    position: relative;
+    counter-increment: histoire;
+    padding: 1.4rem 1.6rem 1.4rem 4.2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+}
+
+.lang-history li::before {
+    content: counter(histoire);
+    position: absolute;
+    top: 1.35rem;
+    left: 1.6rem;
+    color: rgba(57,55,49,.18);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.lang-history p {
+    color: var(--muted-color);
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.lang-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem clamp(1rem, 4vw, 3rem) 5rem;
+}
+
+.lang-nav a {
+    display: grid;
+    gap: .2rem;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+    text-decoration: none;
+}
+
+.lang-nav a:hover {
+    border-color: rgba(145,159,171,.45);
+    background: var(--bg-warm);
+}
+
+.lang-next {
+    text-align: right;
+}
+
+.lang-nav span {
+    color: var(--muted-color);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.lang-nav strong {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.lang-page {
+        padding-top: 4.5rem;
+    }
+
+    .lang-nav {
+        flex-direction: column;
+    }
+
+    .lang-next {
+        text-align: left;
+    }
+}
+
+@media (max-width: 720px) {
+    .lang-page {
+        padding-top: 4.5rem;
+    }
+
+    .lang-nav {
+        flex-direction: column;
+    }
+
+    .lang-next {
+        text-align: left;
+    }
+}
+
+/* Les deux raccourcis en bas du panneau « Les technologies ». */
+.learning-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem 2rem;
+}
+
+/* Lien de sortie des cartes d'axes vers la page détaillée. */
+.axis-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    margin-top: 1.25rem;
+    color: var(--secondary-color);
+    font-size: .8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.axis-link span {
+    transition: transform .2s ease;
+}
+
+.axis-card:hover .axis-link {
+    color: var(--text-color);
+}
+
+.axis-card:hover .axis-link span {
+    transform: translateX(3px);
 }

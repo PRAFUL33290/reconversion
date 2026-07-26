@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML : La structure de la page. Explication simple et repères historiques, dans le cadre du projet de reconversion.">
+    <meta name="theme-color" content="#f9f8f7">
+    <title>HTML — Reconversion Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="langages.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <div class="background-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <header class="glass-header">
+        <a class="logo project-logo" href="../index.html" aria-label="Retour à l’accueil">
+            Reconversion<span>Pro.</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-list">
+                <li>
+                    <a href="../index.html" title="Accueil — tableau de bord du projet">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.5 20.5v-6h5v6"/></svg>
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/objectif.html" title="Objectif professionnel">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>
+                        Objectif
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/competences-actuelles.html" title="Compétences actuelles">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h9"/><path d="M4 12h13"/><path d="M4 16.5h7"/><path d="M17.5 16.5l2 2 3-3.5"/></svg>
+                        Compétences
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/besoins-marches.html" title="Besoins du marché">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg>
+                        Marché
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/competences-a-renforcer.html" title="Compétences à renforcer">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v12"/><path d="M8 7.5 12 3.5l4 4"/><path d="M5 20.5h14"/><path d="M5 20.5v-3"/><path d="M19 20.5v-6"/></svg>
+                        Renforcer
+                    </a>
+                </li>
+                <li>
+                    <a href="../AXES/atomisation.html" title="Atomisation — le positionnement unique">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/></svg>
+                        Atomisation
+                    </a>
+                </li>
+                <li class="learning-menu">
+                    <details>
+                        <summary class="btn-primary">Les technologies</summary>
+                        <div class="learning-dropdown">
+                            <div class="learning-dropdown-head">
+                                <div>
+                                    <span class="learning-overline">Parcours d’apprentissage</span>
+                                    <p>Chaque technologie, expliquée simplement</p>
+                                </div>
+                                <span class="progress-count">10 modules</span>
+                            </div>
+                            <div class="progress-track" aria-label="10 modules disponibles"><span></span></div>
+                            <ol></ol>
+                            <div class="learning-links">
+                                <a class="learning-overview" href="../LANGAGES/index.html">
+                                    Les langages expliqués simplement <span aria-hidden="true">→</span>
+                                </a>
+                                <a class="learning-overview" href="../index.html#formation">
+                                    Voir le parcours de formation <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+        <details class="mobile-menu">
+            <summary>Menu <span aria-hidden="true">⌄</span></summary>
+            <div class="mobile-menu-panel">
+                <nav aria-label="Navigation mobile">
+                    <a href="../index.html">Accueil — tableau de bord du projet</a>
+                    <a href="../AXES/objectif.html">Objectif professionnel</a>
+                    <a href="../AXES/competences-actuelles.html">Compétences actuelles</a>
+                    <a href="../AXES/besoins-marches.html">Besoins du marché</a>
+                    <a href="../AXES/competences-a-renforcer.html">Compétences à renforcer</a>
+                    <a href="../AXES/atomisation.html">Atomisation — le positionnement unique</a>
+                    <a href="../LANGAGES/index.html">Les langages</a>
+                </nav>
+                <p>Les technologies du parcours</p>
+                <ol></ol>
+            </div>
+        </details>
+    </header>
+
+    <main id="contenu" class="lang-page">
+        <nav class="breadcrumb" aria-label="Fil d’ariane">
+            <a href="../index.html">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html">Les langages</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">HTML</span>
+        </nav>
+
+        <section class="section lang-hero">
+            <p class="section-kicker">Le site visible</p>
+            <div class="lang-hero-title">
+                <svg class="lang-icon lang-icon-large" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-1.5 15.5L12 21l-6.5-1.5z"/><path d="M8.5 8.5h7l-.5 4.5H10l.3 3 1.7.5 1.7-.5.2-1.5"/></svg>
+                <h1>HTML</h1>
+            </div>
+            <p class="lang-tagline">La structure de la page</p>
+            <p class="lang-summary">HTML décrit le contenu d’une page web et son organisation : les titres, les paragraphes, les images, les liens, les formulaires. C’est le squelette — sans lui, il n’y a rien à afficher.</p>
+        </section>
+
+        <section class="section lang-block">
+            <h2>D’où ça vient</h2>
+            <ol class="lang-history">
+                    <li><p>HTML naît en 1991 au CERN, en Suisse. Tim Berners-Lee cherche un moyen simple de relier entre eux les documents des chercheurs : il invente le lien hypertexte, et avec lui le web.</p></li>
+                    <li><p>Les premières versions ne servent qu’à écrire du texte structuré. Au fil des années 1990, les navigateurs ajoutent chacun leurs propres balises, et le web devient un patchwork. Le W3C est créé pour remettre de l’ordre et publier des normes communes.</p></li>
+                    <li><p>HTML5, finalisé en 2014, marque la maturité du langage : vidéo et audio sans greffon, balises qui décrivent le sens du contenu (en-tête, navigation, article), et une attention nouvelle portée à l’accessibilité.</p></li>
+            </ol>
+        </section>
+
+        <section class="section lang-block">
+            <h2>Ce qu’il faut retenir</h2>
+            <div class="lang-keys">
+                <article class="lang-key">
+                    <h3>Un langage de balisage, pas de programmation</h3>
+                    <p>HTML ne calcule rien et ne prend aucune décision : il nomme et ordonne le contenu.</p>
+                </article>
+                <article class="lang-key">
+                    <h3>La sémantique compte</h3>
+                    <p>Choisir la bonne balise aide les moteurs de recherche et les lecteurs d’écran à comprendre la page.</p>
+                </article>
+                <article class="lang-key">
+                    <h3>Toujours lisible</h3>
+                    <p>Une page HTML reste un simple fichier texte, ouvrable et modifiable dans n’importe quel éditeur.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section lang-block">
+            <h2>Dans ce projet</h2>
+            <div class="lang-role glass-panel">
+                <p>C’est le premier module du parcours, et la base de tout le reste : un site municipal bien structuré est un site que tout le monde peut lire, y compris avec une aide technique.</p>
+                <a class="btn-primary large" href="../FORMATIONS/MODULE_01_HTML5.html">Ouvrir le module HTML</a>
+            </div>
+        </section>
+
+        <nav class="lang-nav" aria-label="Autres langages">
+            <span></span>
+            <a class="lang-next" href="css.html"><span>Suivant</span><strong>CSS</strong></a>
+        </nav>
+    </main>
+
+    <footer>
+        <a class="logo project-logo" href="../index.html">Reconversion<span>Pro.</span></a>
+        <p>Projet de transition professionnelle — Julien Guerrier</p>
+        <p>2026</p>
+    </footer>
+    <script src="../FORMATIONS/modules-catalog.js"></script>
+    <script src="../FORMATIONS/navigation.js"></script>
+
+</body>
+</html>

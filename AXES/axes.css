@@ -1,0 +1,186 @@
+/* Styles propres aux pages d'axes (AXES/*.html).
+   Les motifs communs — fil d'ariane, frise « comment il s'est construit »,
+   navigation de bas de page — vivent dans styles.css. */
+
+.axe-hero {
+    padding-bottom: 1rem;
+}
+
+.axe-hero-title {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(.75rem, 2vw, 1.5rem);
+    margin-bottom: .75rem;
+}
+
+.axe-hero-number {
+    color: rgba(57,55,49,.14);
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.04em;
+}
+
+.axe-hero h1 {
+    margin-bottom: 0;
+    font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+}
+
+.axe-definition {
+    display: grid;
+    gap: 1rem;
+    max-width: 78ch;
+    margin-bottom: 2.5rem;
+}
+
+.axe-definition p {
+    color: var(--muted-color);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.axe-definition strong {
+    color: var(--text-color);
+}
+
+/* Trois colonnes de listes : cible, compétences, zone… selon l'axe. */
+.axe-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.axe-list {
+    padding: 1.6rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+}
+
+.axe-list h3 {
+    margin-bottom: .9rem;
+    color: var(--secondary-color);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.axe-list ul {
+    display: grid;
+    gap: .5rem;
+    list-style: none;
+}
+
+.axe-list li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--muted-color);
+    font-size: .9rem;
+    line-height: 1.55;
+}
+
+.axe-list li::before {
+    content: "";
+    position: absolute;
+    top: .6em;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    opacity: .5;
+}
+
+.axe-intro {
+    max-width: 74ch;
+    margin-bottom: 1.75rem;
+    color: var(--muted-color);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.axe-note {
+    max-width: 78ch;
+    margin-top: 1.5rem;
+    color: var(--muted-color);
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.axe-note strong {
+    color: var(--text-color);
+}
+
+/* Tableaux (grille de transfert, matrice, sprints) : défilement horizontal
+   contenu dans son propre bloc, jamais sur la page entière. */
+.table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-card);
+    background: var(--card);
+}
+
+.axe-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.axe-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.axe-table th,
+.axe-table td {
+    padding: .95rem 1.1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.axe-table thead th {
+    color: var(--secondary-color);
+    font-size: .66rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: rgba(237,234,230,.55);
+}
+
+.axe-table tbody th {
+    color: var(--text-color);
+    font-size: .9rem;
+    font-weight: 700;
+    min-width: 190px;
+}
+
+.axe-table td {
+    color: var(--muted-color);
+    font-size: .89rem;
+    line-height: 1.55;
+}
+
+.axe-table tbody tr:last-child th,
+.axe-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.axe-table tbody tr:hover th,
+.axe-table tbody tr:hover td {
+    background: var(--bg-warm);
+}
+
+@media (max-width: 720px) {
+    .axe-hero-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .25rem;
+    }
+}

@@ -20,20 +20,50 @@
     </div>
 
     <header class="glass-header">
-        <a class="logo project-logo" href="#accueil" aria-label="Retour à l’accueil">
+        <a class="logo project-logo" href="index.html" aria-label="Retour à l’accueil">
             Reconversion<span>Pro.</span>
         </a>
         <nav aria-label="Navigation principale">
             <ul class="nav-list">
-                <li><a href="#projet">Le projet</a></li>
-                <li><a href="#axes">Les 5 axes</a></li>
-                <li><a href="#document">La synthèse</a></li>
+                <li>
+                    <a href="index.html" title="Accueil — tableau de bord du projet" aria-current="page">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.5 20.5v-6h5v6"/></svg>
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="AXES/objectif.html" title="Objectif professionnel">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor" stroke="none"/></svg>
+                        Objectif
+                    </a>
+                </li>
+                <li>
+                    <a href="AXES/competences-actuelles.html" title="Compétences actuelles">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h9"/><path d="M4 12h13"/><path d="M4 16.5h7"/><path d="M17.5 16.5l2 2 3-3.5"/></svg>
+                        Compétences
+                    </a>
+                </li>
+                <li>
+                    <a href="AXES/besoins-marches.html" title="Besoins du marché">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg>
+                        Marché
+                    </a>
+                </li>
+                <li>
+                    <a href="AXES/competences-a-renforcer.html" title="Compétences à renforcer">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v12"/><path d="M8 7.5 12 3.5l4 4"/><path d="M5 20.5h14"/><path d="M5 20.5v-3"/><path d="M19 20.5v-6"/></svg>
+                        Renforcer
+                    </a>
+                </li>
+                <li>
+                    <a href="AXES/atomisation.html" title="Atomisation — le positionnement unique">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(-30 12 12)"/></svg>
+                        Atomisation
+                    </a>
+                </li>
                 <li class="learning-menu">
                     <details>
-                        <summary class="btn-primary">
-                            Les technologies
-                            <span class="menu-chevron" aria-hidden="true">⌄</span>
-                        </summary>
+                        <summary class="btn-primary">Les technologies</summary>
                         <div class="learning-dropdown">
                             <div class="learning-dropdown-head">
                                 <div>
@@ -42,95 +72,59 @@
                                 </div>
                                 <span class="progress-count">10 modules</span>
                             </div>
-                            <div class="progress-track" aria-label="10 modules disponibles">
-                                <span></span>
+                            <div class="progress-track" aria-label="10 modules disponibles"><span></span></div>
+                            <ol></ol>
+                            <div class="learning-links">
+                                <a class="learning-overview" href="LANGAGES/index.html">
+                                    Les langages expliqués simplement <span aria-hidden="true">→</span>
+                                </a>
+                                <a class="learning-overview" href="index.html#formation">
+                                    Voir le parcours de formation <span aria-hidden="true">→</span>
+                                </a>
                             </div>
-                            <ol>
-                                <li class="module-current">
-                                    <a href="FORMATIONS/MODULE_01_HTML5.html">
-                                        <span class="module-number">01</span>
-                                        <span><strong>HTML5</strong><small>Structure et sémantique</small></span>
-                                        <span class="module-status">Disponible</span>
-                                    </a>
-                                </li>
-                                <li class="module-current">
-                                    <a href="FORMATIONS/MODULE_02_CSS3_PRAFUL_CITY_CMS.html">
-                                        <span class="module-number">02</span>
-                                        <span><strong>CSS3</strong><small>Mise en page responsive</small></span>
-                                        <span class="module-status">Disponible</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="future-module">
-                                        <span class="module-number">03</span>
-                                        <span><strong>JavaScript</strong><small>Interactions essentielles</small></span>
-                                        <span class="module-status">À venir</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="future-module">
-                                        <span class="module-number">04</span>
-                                        <span><strong>PHP &amp; MySQL</strong><small>Premiers pas côté serveur</small></span>
-                                        <span class="module-status">À venir</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="future-module">
-                                        <span class="module-number">05</span>
-                                        <span><strong>WordPress avancé</strong><small>Administration et maintenance</small></span>
-                                        <span class="module-status">À venir</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="future-module">
-                                        <span class="module-number">06</span>
-                                        <span><strong>Web responsable</strong><small>RGAA, SEO et sécurité</small></span>
-                                        <span class="module-status">À venir</span>
-                                    </span>
-                                </li>
-                            </ol>
-                            <a class="learning-overview" href="#formation">
-                                Voir le parcours de formation <span aria-hidden="true">→</span>
-                            </a>
                         </div>
                     </details>
                 </li>
             </ul>
         </nav>
         <details class="mobile-menu">
-            <summary>Technologies <span aria-hidden="true">⌄</span></summary>
+            <summary>Menu <span aria-hidden="true">⌄</span></summary>
             <div class="mobile-menu-panel">
                 <nav aria-label="Navigation mobile">
-                    <a href="#projet">Le projet</a>
-                    <a href="#axes">Les 5 axes</a>
-                    <a href="#formation">Le parcours</a>
+                    <a href="index.html" aria-current="page">Accueil — tableau de bord du projet</a>
+                    <a href="AXES/objectif.html">Objectif professionnel</a>
+                    <a href="AXES/competences-actuelles.html">Compétences actuelles</a>
+                    <a href="AXES/besoins-marches.html">Besoins du marché</a>
+                    <a href="AXES/competences-a-renforcer.html">Compétences à renforcer</a>
+                    <a href="AXES/atomisation.html">Atomisation — le positionnement unique</a>
+                    <a href="LANGAGES/index.html">Les langages</a>
                 </nav>
                 <p>Les technologies du parcours</p>
-                <ol>
-                    <li><a href="FORMATIONS/MODULE_01_HTML5.html"><span>01</span> HTML5 <small>Disponible</small></a></li>
-                    <li><a href="FORMATIONS/MODULE_02_CSS3_PRAFUL_CITY_CMS.html"><span>02</span> CSS3 <small>Disponible</small></a></li>
-                    <li><span><b>03</b> JavaScript <small>À venir</small></span></li>
-                    <li><span><b>04</b> PHP &amp; MySQL <small>À venir</small></span></li>
-                    <li><span><b>05</b> WordPress avancé <small>À venir</small></span></li>
-                    <li><span><b>06</b> Web responsable <small>À venir</small></span></li>
-                </ol>
+                <ol></ol>
             </div>
         </details>
     </header>
 
     <main id="contenu">
         <section class="hero project-hero" id="accueil">
-            <div class="hero-content">
-                <p class="eyebrow"><span></span> Plan de transition professionnelle</p>
-                <h1>Construire une reconversion <span class="gradient-text">concrète et progressive.</span></h1>
-                <p class="hero-lead">
-                    Un projet pour passer de l’animation à la communication digitale,
-                    au web et au support numérique, au service des collectivités locales.
-                </p>
-                <div class="cta-group">
-                    <a class="btn-primary large" href="https://github.com/PRAFUL33290/reconversion.git" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub <span aria-hidden="true">↗</span></a>
-                    <a class="btn-secondary large" href="Projet%20Julien%20Guerrier/Projet%20reconversion.docx">Ouvrir le document source</a>
+            <div class="hero-content hero-split">
+                <div class="hero-text">
+                    <p class="eyebrow"><span></span> Plan de transition professionnelle</p>
+                    <h1>Construire une reconversion <span class="gradient-text">concrète et progressive.</span></h1>
+                    <p class="hero-lead">
+                        Un projet pour passer de l’animation à la communication digitale,
+                        au web et au support numérique, au service des collectivités locales.
+                    </p>
+                    <div class="cta-group">
+                        <a class="btn-primary large" href="https://github.com/PRAFUL33290/reconversion.git" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub</a>
+                        <a class="btn-secondary large" href="Projet%20Julien%20Guerrier/Projet%20reconversion.docx">Ouvrir le document source</a>
+                    </div>
                 </div>
+                <figure class="hero-visual">
+                    <img src="ASSETS/HERO.png" width="1536" height="1024"
+                         alt="Poste de travail avec un tableau de bord affiché sur ordinateur, téléphone et portable : suivi des tâches, des projets et des notes."
+                         fetchpriority="high" decoding="async">
+                </figure>
             </div>
         </section>
 
@@ -163,38 +157,49 @@
                     <p class="section-kicker">Le cœur du projet</p>
                     <h2>Cinq axes pour structurer la transition</h2>
                 </div>
-                <p>Le document de synthèse transforme une intention de reconversion en parcours lisible et actionnable.</p>
+                <p>Chaque axe a sa page : la définition, le récit de sa construction et l’outil qui permet de le piloter.</p>
             </div>
 
             <div class="axis-grid">
-                <article class="axis-card axis-card-featured">
+                <article class="axis-card axis-card-wide axis-card-featured">
                     <span class="axis-number">01</span>
-                    <p class="axis-label">Définir</p>
-                    <h3>L’objectif professionnel</h3>
-                    <p>
-                        Cibler en priorité les postes de chargé de communication digitale,
-                        webmaster ou assistant communication et numérique en collectivité.
-                    </p>
+                    <div>
+                        <p class="axis-label">Définir</p>
+                        <h3>L’objectif professionnel</h3>
+                        <p>
+                            Cibler en priorité les postes de chargé de communication digitale,
+                            webmaster ou assistant communication et numérique en collectivité.
+                        </p>
+                        <a class="axis-link" href="AXES/objectif.html">
+                            Objectif, mesure et révision <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
                 </article>
 
                 <article class="axis-card">
                     <span class="axis-number">02</span>
                     <p class="axis-label">Valoriser</p>
-                    <h3>Les compétences existantes</h3>
+                    <h3>Les compétences actuelles</h3>
                     <p>
                         Mettre en avant la création graphique, WordPress, la vidéo, les outils
                         numériques et l’expérience humaine acquise dans l’animation.
                     </p>
+                    <a class="axis-link" href="AXES/competences-actuelles.html">
+                        Inventaire et grille de transfert <span aria-hidden="true">→</span>
+                    </a>
                 </article>
 
                 <article class="axis-card">
                     <span class="axis-number">03</span>
                     <p class="axis-label">Comprendre</p>
-                    <h3>Les besoins des mairies</h3>
+                    <h3>Les besoins du marché</h3>
                     <p>
                         Identifier les métiers recherchés et les attentes des collectivités :
                         polyvalence, communication, gestion web et sens du service public.
                     </p>
+                    <a class="axis-link" href="AXES/besoins-marches.html">
+                        Matrice douleur / fréquence / budget <span aria-hidden="true">→</span>
+                    </a>
                 </article>
 
                 <article class="axis-card">
@@ -205,18 +210,24 @@
                         Construire un parcours en HTML, CSS, JavaScript, PHP, MySQL,
                         WordPress avancé, accessibilité, SEO, sécurité et support informatique.
                     </p>
+                    <a class="axis-link" href="AXES/competences-a-renforcer.html">
+                        Plan d’apprentissage par sprints <span aria-hidden="true">→</span>
+                    </a>
                 </article>
 
                 <article class="axis-card axis-card-wide">
                     <span class="axis-number">05</span>
                     <div>
                         <p class="axis-label">Se démarquer</p>
-                        <h3>L’automatisation au service des équipes</h3>
+                        <h3>L’atomisation du positionnement</h3>
                         <p>
-                            Imaginer des flux utiles pour les communes : diffusion d’actualités,
-                            collecte d’événements, demandes de visuels, veille locale et bilans mensuels,
-                            avec une attention particulière portée au RGPD et à la maîtrise des données.
+                            Une formule que personne ne cumule : dix ans de terrain, l’œil graphique,
+                            le web et l’automatisation respectueuse des données — déclinée en cinq flux
+                            concrets pour une équipe communication.
                         </p>
+                        <a class="axis-link" href="AXES/atomisation.html">
+                            Formule, naissance et protocole de test <span aria-hidden="true">→</span>
+                        </a>
                     </div>
                 </article>
             </div>
